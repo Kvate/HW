@@ -1,0 +1,27 @@
+mkdir home_build
+cd home_build
+mkdir 1_floor
+mkdir 2_floor
+cd 1_floor
+mkdir holl
+mkdir kitchen
+mkdir living_room
+cd kitchen
+mkdir fridge
+cd fridge
+touch list_of_products.txt
+cd ..
+cd ..
+cd living_room
+mkdir closet
+cd closet
+touch list_of_books.txt
+cd 1_floor
+cd ..
+cd 2_floor
+mkdir grandma
+mkdir papa
+mkdir mama
+mkdir daughter
+mkdir son
+
