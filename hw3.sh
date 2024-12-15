@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Создаем директорию terminal_task/results, если она еще не существует
+# Создание директории terminal_task/results
 mkdir -p terminal_task/results
 
-# Преобразуем файл gff3 и создаем новую таблицу
+# Вжух, и файл .gff3 стал красивой таблицей
 awk '
 BEGIN { FS="\t"; OFS="\t" }
 $3 == "gene" && $9 ~ /gene_type=unprocessed_pseudogene/ {
@@ -11,11 +11,11 @@ $3 == "gene" && $9 ~ /gene_type=unprocessed_pseudogene/ {
     match($9, /gene_name=[^;]+/, arr)
     gene_name = substr(arr[0], length("gene_name=")+1)
     
-    # Оставляем нужные столбцы
+    # Оставляем только нужные столбцы
     print $1, $4, $5, $7, gene_name
 }' /root/hw/gencode.v41.basic.annotation.gff3 > terminal_task/results/intermediate.tsv
 
-# Модифицируем таблицу согласно условиям
+# Вы когда-нибудь мечтали стать лучшей версией себя? 
 awk '
 BEGIN { FS="\t"; OFS="\t" }
 {
