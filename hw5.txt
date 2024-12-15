@@ -1,0 +1,5 @@
+grep -Eio '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.ru\b'
+grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' 
+find . -name "*genome*" -type f
+find . -name "*GCA*" -type f
+awk -F'\t' '$7 == "-" && $9 ~ /^[a-zA-Z0-9_][a-zA-Z0-9_]{3,}$/ && !$4 ~ /^[AZH]/' 
