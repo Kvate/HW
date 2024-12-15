@@ -6,7 +6,7 @@ if [ $# -ne 3 ]; then
   exit 1
 fi
 
-# Превращение поданые аргументы в переменные
+# Превращение поданых аргументов в переменные
 FILE_PATH=$1
 CURRENT_EXTENSION=$2
 DESIRED_EXTENSION=$3
@@ -25,6 +25,6 @@ done
 
 # And finally...Меняем расширение
 mv "$FILE_PATH" "${FILE_PATH%.*}.$DESIRED_EXTENSION"
-# Вывод названия файла без пути
+# Название файла без пути
 BASE_NAME=${FILE_PATH##*/}
 echo "Успешный успех! Файл изменён на ${BASE_NAME%.*}.$DESIRED_EXTENSION."
